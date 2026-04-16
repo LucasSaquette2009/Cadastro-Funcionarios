@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace CaFuncionario
 {
@@ -11,45 +12,58 @@ namespace CaFuncionario
     /// </summary>
     public static class Funcoes
     {
-        /// <summary>
-        /// Verifica se a string contém apenas letras e espaços.
-        /// </summary>
-        /// <returns>True se só houver letras e espaços, false caso contrário.</returns>
-        public static bool SoLetras(string texto)
+
+        public static string SoLetras(string mensagem)
         {
-            foreach (char c in texto)
+            string entrada;
+            Console.Write(mensagem);
+            while (string.IsNullOrWhiteSpace(entrada = Console.ReadLine()!) || entrada.Any(char.IsDigit))
             {
-                // Se o caractere não for letra e não for espaço, retorna false
-                if (!char.IsLetter(c) && c != ' ')
-                {
-                    return false;
-                }
+                ApagarAviso();
+                Console.Write("Caractér incorreto!! " + mensagem);
             }
-            return true;
+            return entrada;
         }
 
-        /// <summary>
-        /// Verifica se a string contém apenas números.
-        /// </summary>
-        /// <param name="texto">Texto a ser verificado.</param>
-        /// <returns>True se só houver números, false caso contrário.</returns>
-        public static bool SoNumeros(string texto)
+
+        public static int SoNumeros(string mensagem)
         {
-            foreach (char c in texto)
+            int valor;
+            Console.Write(mensagem);
+            while (!int.TryParse(Console.ReadLine(), out valor) || valor < 0)
             {
-                // Se o caractere não for dígito, retorna false
-                if (!char.IsDigit(c))
-                {
-                    return false;
-                }
+                ApagarAviso();
+                Console.Write("Caractér incorreto!! " + mensagem);
             }
-            return true;
+            return valor;
         }
 
-        /// <summary>
-        /// Pergunta ao usuário se quer repetir
-        /// </summary>
-        /// <returns>True se o usuário digitar 1, false caso contrário.</returns>
+        public static string Soespecifico(string mensagem, string padraoRegex)
+        {
+            string especifico;
+            Console.Write(mensagem);
+            especifico = Console.ReadLine()!;
+            while (!Regex.IsMatch(especifico, padraoRegex))
+            {
+                ApagarAviso();
+                Console.Write("Caractér incorreto!! " + mensagem);
+                especifico = Console.ReadLine()!;
+            }
+            return especifico;
+        }
+
+        public static DateTime Sodata(string mensagem)
+        {
+            DateTime data;
+            Console.Write(mensagem);
+            while (!DateTime.TryParse(Console.ReadLine(), out data) || data > DateTime.Now || data < DateTime.Now.AddYears(-150))
+            {
+                ApagarAviso();
+                Console.Write("Caractér incorreto!! " + mensagem);
+            }
+            return data;
+        }
+
         public static bool QuerRepetir()
         {
             int resposta;
@@ -67,11 +81,8 @@ namespace CaFuncionario
             }
             return resposta == 1;
         }
-        /// <summary>
-        /// Pergunta ao usuário se quer tentar novamente
-        /// </summary>
-        /// <returns>True se o usuário digitar 1, false caso contrário.</returns>
-        /// 
+
+
         public static bool QuerVoltar()
         {
             int resposta;

@@ -11,130 +11,60 @@ funcionarios.Add(new Funcionario() { Matricula = 1, Nome = "João Silva", Endere
 funcionarios.Add(new Funcionario() { Matricula = 2, Nome = "Mariazinha machado", Endereço = "Rua B, 123", Cidade = "São Paulo", Uf = "SP", Cep = "98765432", Cpf = "98765432123", Telefone = "15400289223", Email = "Maria@gmail.com", Datanasc = new DateTime(2010, 2, 20) });
 int opcao;
 bool voltar = true;
-while(voltar)
+while (voltar)
 {
-Funcionario f = new Funcionario();//objeto de funcionario
-//opcoes
-Console.Clear();
-Console.WriteLine(Console.Title);
-Console.WriteLine("Escolha uma das opções abaixo:\n" +
-    "\n1. Cadastrar um Funcionário" +
-    "\n2. Listar os Funcionários" +
-    "\n3. Editar um Funcionário" +
-    "\n4. Consultar um Funcionário" +
-    "\n5. Excluir um Funcionário" +
-    "\n6. Sair");
-Console.Write("\nOpção: ");
-while (!int.TryParse(Console.ReadLine(), out opcao) || opcao < 1 && opcao > 7)
-{
-    Funcoes.ApagarAviso2();
-    Console.Write("Opção invalida!\nDigite novamente: ");
-}
+    //opcoes
+    Console.Clear();
+    Console.WriteLine(Console.Title);
+    Console.WriteLine("Escolha uma das opções abaixo:\n" +
+        "\n1. Cadastrar um Funcionário" +
+        "\n2. Listar os Funcionários" +
+        "\n3. Editar um Funcionário" +
+        "\n4. Consultar um Funcionário" +
+        "\n5. Excluir um Funcionário" +
+        "\n6. Sair");
+    Console.Write("\nOpção: ");
+    while (!int.TryParse(Console.ReadLine(), out opcao) || opcao < 1 && opcao > 7)
+    {
+        Funcoes.ApagarAviso2();
+        Console.Write("Opção invalida!\nDigite novamente: ");
+    }
     switch (opcao)
     {
         case 1: //cadastrar
-            int mat; //variaveis do case
-            string nome1, endereco1, cidade1, estado1, cep1, cpf1, tel1, email1;
-            DateTime data1 = DateTime.Now;
+            Funcionario f = new Funcionario();//objeto de funcionario
+            int mat;
 
             //matricula
             Console.Clear();
-            Console.WriteLine("Cadastrar um Funcionário\n");
-            Console.Write("Informe a matrícula: ");
-            while (!int.TryParse(Console.ReadLine(), out mat) || mat < 1)//Verificar se é inteiro ou menor que 0
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("Matrícula está incorreta! Informe a matrícula: ");
-            }
-            f.Matricula = mat;//variavel temporaria que criei pra a variavel original nao guardar o valor errado
+           f.Matricula = Funcoes.SoNumeros("Informe a matrícula: ");
 
             //Nome
-            Console.Write("Informe o nome: ");
-            while (string.IsNullOrWhiteSpace(nome1 = Console.ReadLine()!) || !Funcoes.SoLetras(nome1))
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("Nome está incorreto! Informe o Nome: ");
-            }
-            f.Nome = nome1;
+            f.Nome = Funcoes.SoLetras("Informe o Nome: ");
 
             //endereço
-            Console.Write("Informe o endereço: ");
-            while (string.IsNullOrWhiteSpace(endereco1 = Console.ReadLine()!))
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("Endereço está incorreto! Informe o endereço: ");
-            }
-            f.Endereço = endereco1;
+            f.Endereço = Funcoes.SoLetras("Informe o endereço: ");
 
             //cidade
-            Console.Write("Informe a cidade: ");
-            while (string.IsNullOrWhiteSpace(cidade1 = Console.ReadLine()!) || !Funcoes.SoLetras(cidade1))
-            {
-
-                Funcoes.ApagarAviso();
-                Console.Write("Cidade está incorreta! Informe a Cidade: ");
-            }
-            f.Cidade = cidade1;
+            f.Cidade = Funcoes.SoLetras("Informe a cidade: ");
 
             //estado
-            Console.Write("Informe o Estado: ");
-            while (string.IsNullOrWhiteSpace(estado1 = Console.ReadLine()!) || !Funcoes.SoLetras(estado1))
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("Estado está incorreto! Informe o Estado: ");
-            }
-            f.Uf = estado1;
+            f.Uf = Funcoes.SoLetras("Informe o Estado: ");
 
             //CEP
-            Console.Write("Informe o CEP: ");
-            while (String.IsNullOrWhiteSpace(cep1 = Console.ReadLine()!)
-                || !Funcoes.SoNumeros(cep1)
-                || cep1.Length != 8) //verifica se é só numero e limita o caracter do cep
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("CEP está incorreto! Informe o CEP: ");
-            }
-            f.Cep = cep1;
+            f.Cep = Funcoes.Soespecifico("CEP (8 DIGITOS): ", @"^\d{8}$");
 
             //CPF
-            Console.Write("Informe o CPF: ");
-            while (String.IsNullOrWhiteSpace(cpf1 = Console.ReadLine()!)
-               || !Funcoes.SoNumeros(cpf1)
-               || cpf1.Length != 11)
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("CPF está incorreto! Informe o CPF: ");
-            }
-            f.Cpf = cpf1;
+            f.Cpf = Funcoes.Soespecifico("CPF (11 DIGITOS): ", @"^\d{11}$");
 
             //Telefone, eu ajustei pro fixo e telefone movel só
-            Console.Write("Informe o telefone (Com DDD): ");
-            while (String.IsNullOrWhiteSpace(tel1 = Console.ReadLine()!)
-               || !Funcoes.SoNumeros(tel1)
-               || tel1.Length < 11 | tel1.Length > 11)
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("Telefone está incorreto! Informe o Telefone: ");
-            }
-            f.Telefone = tel1;
+            f.Telefone = Funcoes.Soespecifico("Telefone (11 DIGITOS): ", @"^\d{11}$");
 
             //email
-            Console.Write("Informe o email: ");
-            while (string.IsNullOrWhiteSpace(email1 = Console.ReadLine()!))
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("Email está incorreto! Informe o Email: ");
-            }
-            f.Email = email1;
+            f.Email = Funcoes.Soespecifico("Informe o email: ", @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 
             //data de nascimento
-            Console.Write("Informe a data de nascimento: ");
-            while (!DateTime.TryParse(Console.ReadLine(), out data1) || data1 > DateTime.Now || data1 < DateTime.Now.AddYears(-150))
-            {
-                Funcoes.ApagarAviso();
-                Console.Write("Data está incorreta! Informe a data: ");
-            }
-            f.Datanasc = data1;
+            f.Datanasc = Funcoes.Sodata("Informe a data de nascimento: ");
 
             //Jogar as informações pra classe e mostrar que está cadastrado
             funcionarios.Add(f);
@@ -175,14 +105,8 @@ while (!int.TryParse(Console.ReadLine(), out opcao) || opcao < 1 && opcao > 7)
                 }
                 else
                 {
-                    //matricula
-                    Console.Write("Informe a matrícula desejada: ");
-                    while (!int.TryParse(Console.ReadLine(), out mat) || mat < 1)
-                    {
-                        Funcoes.ApagarAviso();
-                        Console.Write("Matrícula está incorreta! Informe a matrícula: ");
-                    }
-                    bool NaoAchou = true; //Variavel bool pra verificar se não achou o func matriculado
+                    mat = Funcoes.SoNumeros("Informe a matrícula do funcionário que deseja editar: ");
+                    bool NaoAchou = true;
                     foreach (var func in funcionarios)
                     {
                         if (func.Matricula == mat) //Verificar um funcionario já matriculado
@@ -191,91 +115,30 @@ while (!int.TryParse(Console.ReadLine(), out opcao) || opcao < 1 && opcao > 7)
                             NaoAchou = false;
 
                             //nome
-                            Console.Write("Informe o nome: ");
-                            while (string.IsNullOrWhiteSpace(nome1 = Console.ReadLine()!) || !Funcoes.SoLetras(nome1))
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("Nome está incorreto! Informe o Nome: ");
-                            }
-                            func.Nome = nome1;
+                            func.Nome = Funcoes.SoLetras("Informe o Nome: ");
                             //endereço
-                            Console.Write("Informe o endereço: ");
-                            while (string.IsNullOrWhiteSpace(endereco1 = Console.ReadLine()!))
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("Endereço está incorreto! Informe o endereço: ");
-                            }
-                            func.Endereço = endereco1;
+                            func.Endereço = Funcoes.SoLetras("Informe o endereço: ");
 
                             //cidade
-                            Console.Write("Informe a cidade: ");
-                            while (string.IsNullOrWhiteSpace(cidade1 = Console.ReadLine()!) || !Funcoes.SoLetras(cidade1))
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("Cidade está incorreta! Informe a Cidade: ");
-                                func.Cidade = cidade1;
-                            }
+                            func.Cidade = Funcoes.SoLetras("Informe a cidade: ");
 
                             //estado
-                            Console.Write("Informe o Estado: ");
-                            while (string.IsNullOrWhiteSpace(estado1 = Console.ReadLine()!) || !Funcoes.SoLetras(estado1))
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("Estado está incorreto! Informe o Estado: ");
-                            }
-                            func.Uf = estado1;
+                            func.Uf = Funcoes.SoLetras("Informe o Estado: ");
 
                             //CEP
-                            Console.Write("Informe o CEP: ");
-                            while (String.IsNullOrWhiteSpace(cep1 = Console.ReadLine()!)
-                                || !Funcoes.SoNumeros(cep1)
-                                || cep1.Length != 8) //verifica se é só numero e limita o caracter do cep
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("CEP está incorreto! Informe o CEP: ");
-                            }
-                            func.Cep = cep1;
+                            func.Cep = Funcoes.Soespecifico("CEP (8 DIGITOS): ", @"^\d{8}$");
 
                             //CPF
-                            Console.Write("Informe o CPF: ");
-                            while (String.IsNullOrWhiteSpace(cpf1 = Console.ReadLine()!)
-                               || !Funcoes.SoNumeros(cpf1)
-                               || cpf1.Length != 11)
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("CPF está incorreto! Informe o CPF: ");
-                            }
-                            func.Cpf = cpf1;
+                            func.Cpf = Funcoes.Soespecifico("CPF (11 DIGITOS): ", @"^\d{11}$");
 
                             //Telefone, eu ajustei pro fixo e telefone movel só
-                            Console.Write("Informe o telefone: ");
-                            while (String.IsNullOrWhiteSpace(tel1 = Console.ReadLine()!)
-                               || !Funcoes.SoNumeros(tel1)
-                               || tel1.Length < 11 || tel1.Length > 11)
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("Telefone está incorreto! Informe o Telefone: ");
-                            }
-                            func.Telefone = tel1;
+                            func.Telefone = Funcoes.Soespecifico("Telefone (11 DIGITOS): ", @"^\d{11}$");
 
                             //email
-                            Console.Write("Informe o email: ");
-                            while (string.IsNullOrWhiteSpace(email1 = Console.ReadLine()!))
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("Email está incorreto! Informe o Email: ");
-                            }
-                            func.Email = email1;
+                            func.Email = Funcoes.Soespecifico("Informe o email: ", @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 
                             //data de nascimento
-                            Console.Write("Informe a data de nascimento: ");
-                            while (!DateTime.TryParse(Console.ReadLine(), out data1) || data1 > DateTime.Now || data1 < DateTime.Now.AddYears(-150))
-                            {
-                                Funcoes.ApagarAviso();
-                                Console.Write("Data está incorreta! Informe a data: ");
-                            }
-                            func.Datanasc = data1;
-                            Console.WriteLine("\nAlterado com sucesso!");
+                            func.Datanasc = Funcoes.Sodata("Informe a data de nascimento: ");
                         }
                     }
                     if (NaoAchou)
