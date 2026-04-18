@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|c:\\users\\coelho\\downloads\\cadastro-c-\\cafuncionario\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|solutionrelative:cafuncionario\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|c:\\users\\coelho\\downloads\\cadastro-c-\\cafuncionario\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|solutionrelative:cafuncionario\\funcoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|c:\\users\\coelho\\downloads\\cadastro-c-\\cafuncionario\\menu_cases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|solutionrelative:cafuncionario\\menu_cases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|c:\\users\\coelho\\downloads\\cadastro-c-\\cafuncionario\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|solutionrelative:cafuncionario\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5D7AB1D3-55C1-4F3D-B367-2C849D1BE9BD}|CaFuncionario\\CaFuncionario.csproj|c:\\users\\coelho\\downloads\\cadastro-c-\\cafuncionario\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,39 +35,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Funcionario.cs",
-              "DocumentMoniker": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Funcionario.cs",
-              "RelativeDocumentMoniker": "CaFuncionario\\Funcionario.cs",
-              "ToolTip": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Funcionario.cs",
-              "RelativeToolTip": "CaFuncionario\\Funcionario.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAADwv6wAAAABAAAAAAAAAA==",
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Main.cs",
+              "RelativeDocumentMoniker": "CaFuncionario\\Main.cs",
+              "ToolTip": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Main.cs",
+              "RelativeToolTip": "CaFuncionario\\Main.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T16:44:58.975Z"
+              "WhenOpened": "2026-03-13T16:38:37.679Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Menu_Cases.cs",
+              "DocumentMoniker": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Menu_Cases.cs",
+              "RelativeDocumentMoniker": "CaFuncionario\\Menu_Cases.cs",
+              "ToolTip": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Menu_Cases.cs",
+              "RelativeToolTip": "CaFuncionario\\Menu_Cases.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAIwHMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T17:24:31.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Funcoes.cs",
               "DocumentMoniker": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Funcoes.cs",
               "RelativeDocumentMoniker": "CaFuncionario\\Funcoes.cs",
               "ToolTip": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Funcoes.cs",
               "RelativeToolTip": "CaFuncionario\\Funcoes.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADwvyAAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwDUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-15T20:40:51.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Program.cs",
-              "RelativeDocumentMoniker": "CaFuncionario\\Program.cs",
-              "ToolTip": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Program.cs*",
-              "RelativeToolTip": "CaFuncionario\\Program.cs*",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAHoAAABRAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Funcionario.cs",
+              "RelativeDocumentMoniker": "CaFuncionario\\Funcionario.cs",
+              "ToolTip": "C:\\Users\\coelho\\Downloads\\Cadastro-C-\\CaFuncionario\\Funcionario.cs",
+              "RelativeToolTip": "CaFuncionario\\Funcionario.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T16:38:37.679Z",
+              "WhenOpened": "2026-03-13T16:44:58.975Z",
               "EditorCaption": ""
             }
           ]

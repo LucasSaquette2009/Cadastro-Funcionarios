@@ -10,7 +10,7 @@ namespace CaFuncionario
     /// <summary>
     /// Representa um funcionário de uma empresa, com informações pessoais e de contato.
     /// </summary>
-    class Funcionario
+    public class Funcionario
     {
         // Campos privados
         private int matricula;
