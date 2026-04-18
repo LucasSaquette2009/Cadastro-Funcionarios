@@ -1,33 +1,41 @@
-﻿Sistema de Gestão de Funcionários
-Sistema desenvolvido em C# Console Application para gerenciamento de dados de colaboradores. O projeto foca em boas práticas de programação orientada a objetos e validações rigorosas de entrada de dados.
+🚀 Sistema de Gestão de Funcionários (CaFuncionario)
+Bem-vindo ao CaFuncionario! Este é um projeto desenvolvido em C# Console Application focado na gestão eficiente de registos de colaboradores, aplicando os pilares da Programação Orientada a Objetos (POO).
 
-Funcionalidades Principais
-Cadastro Dinâmico: Registro de funcionários com campos protegidos por encapsulamento.
+🛠️ Funcionalidades principais
+🆕 Cadastro Completo: Registo de funcionários com campos protegidos e organizados.
 
-Validação com Regex: Verificação de formato para CPF, CEP, Telefone e E-mail, impedindo entradas inválidas.
+🔍 Busca Inteligente: Localização rápida de colaboradores através do número de matrícula utilizando LINQ.
 
-Edição Inteligente: Sistema que permite atualizar apenas os campos desejados; ao pressionar Enter em um campo vazio, o dado anterior é preservado.
+📝 Edição Flexível: Permite atualizar dados específicos sem necessidade de reescrever tudo. Se pressionar Enter num campo vazio, o sistema mantém o valor original.
 
-Filtros de Entrada: Métodos personalizados para impedir a inserção de letras em campos numéricos e números em campos de texto.
+✅ Validações com Regex: Verificação rigorosa de formatos para:
 
-Busca por Matrícula: Localização rápida de registros dentro da lista utilizando LINQ.
+CPF (apenas números, 11 dígitos)
 
-Tecnologias e Conceitos Utilizados
-Linguagem: C# (.NET)
+CEP (apenas números, 8 dígitos)
 
-LINQ: Uso de métodos .Any() e .Find() para manipulação eficiente de coleções.
+E-mail (validação de formato padrão)
 
-Expressões Lambda: Utilizadas para simplificar buscas e filtragens de dados.
+Telefone e Datas.
 
-Encapsulamento: Uso de campos privados e propriedades públicas para garantir a integridade dos dados.
+🛡️ Filtros de Entrada: Métodos personalizados que impedem a inserção de letras em campos numéricos e vice-versa.
 
-Operadores Modernos: Implementação do operador de coalescência nula (??) e interpolação de strings ($"").
+🧠 Conceitos Técnicos Aplicados
+O projeto foi construído para demonstrar domínio em:
 
-Estrutura do Projeto
-O código está organizado em camadas de lógica:
+Encapsulamento: Uso de campos private com propriedades public (get/set) para total segurança dos dados.
 
-Program/Menu: Gerenciamento do fluxo de telas e interação com o usuário.
+LINQ & Lambda: Utilização de .Any() para verificar duplicados e .Find() para capturar objetos na lista.
 
-Classes de Entidade: Definição dos objetos e suas propriedades.
+Operador ?? (Null Coalescing): Lógica essencial para a funcionalidade de "manter dado anterior" durante a edição.
 
-Camada de Funções: Métodos utilitários para validações de tipos e tratamento de erros.-
+Interpolação de Strings: Uso de $"" para um código mais limpo e legível.
+
+Tratamento de Nulidade: Garantia de que o programa não crasha ao lidar com valores vazios.
+
+📁 Estrutura do Código
+Menu/Program: Gere o fluxo principal e a interface com o utilizador.
+
+Funcionario.cs: Classe de entidade com a lógica de negócio e encapsulamento.
+
+Funcoes.cs: Biblioteca de utilitários para validações, tratamento de cores e entradas de dados.
